@@ -1,0 +1,5 @@
+- [x] Add Owl Carousel CDN to index.html
+- [x] Replace hero section in index.html with the new carousel HTML
+- [x] Add CSS styles for Owl Carousel and new classes in style.css
+- [x] Update arquivo.js to initialize Owl Carousel for the hero
+- [x] Test the site by opening index.html in browser
