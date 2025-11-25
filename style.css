@@ -1,346 +1,489 @@
+/* Importa a fonte 'Freude' para ser usada no site */
 @font-face {
   font-family: 'Freude';
   src: url('Freude.otf') format('opentype'),
        url('Freude-Regular.ttf') format('truetype');
 }
 
+/* Define as variáveis de cores para serem usadas em todo o site */
 :root {
-  --primary-color: #ef8aa0;
-  --secondary-color: #ffbb00;
-  --text-color: #333;
-  --background-color: #fff;
-  --surface-color: #f9f9f9;
-  --accent-color: #4dd9db;
-  --dark-accent-color: #663e4b;
-  --light-accent-color: #fff0f5;
+  --primary-color: #ef8aa0; /* Cor primária */
+  --secondary-color: #ffbb00; /* Cor secundária */
+  --text-color: #333; /* Cor do texto */
+  --background-color: #fff; /* Cor de fundo */
+  --surface-color: #f9f9f9; /* Cor da superfície */
+  --accent-color: #4dd9db; /* Cor de destaque */
+  --dark-accent-color: #663e4b; /* Cor de destaque escura */
+  --light-accent-color: #fff0f5; /* Cor de destaque clara */
 }
 
+/* Reseta as margens e preenchimentos de todos os elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilos gerais do corpo da página */
 body {
-  font-family: 'Freude', sans-serif;
-  color: var(--text-color);
-  background-color: #fff0f5;
-  line-height: 1.6;
+  font-family: 'Freude', sans-serif; /* Define a fonte */
+  color: var(--text-color); /* Define a cor do texto */
+  background-color: #fff0f5; /* Define a cor de fundo */
+  line-height: 1.6; /* Define a altura da linha */
 }
 
+/* Estilos para os links */
 a {
-  color: var(--primary-color);
-  text-decoration: none;
+  color: var(--primary-color); /* Define a cor do link */
+  text-decoration: none; /* Remove o sublinhado */
 }
 
+/* Estilos para as imagens */
 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+  height: auto; /* Mantém a proporção da imagem */
 }
 
+/* Estilos do cabeçalho */
 .header {
-  background-color: var(--background-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  background-color: var(--background-color); /* Cor de fundo do cabeçalho */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra do cabeçalho */
+  position: sticky; /* Mantém o cabeçalho fixo no topo */
   top: 0;
-  z-index: 100;
+  z-index: 100; /* Garante que o cabeçalho fique sobre outros elementos */
 }
 
+/* Contêiner do cabeçalho */
 .header__container {
-  max-width: 12000px;
-  margin: 0 auto;
-  padding: -10rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-   
+  max-width: 12000px; /* Largura máxima do contêiner */
+  margin: 0 auto; /* Centraliza o contêiner */
+  padding: 1rem; /* Preenchimento interno */
+  display: flex; /* Usa flexbox para alinhar os itens */
+  justify-content: space-between; /* Distribui o espaço entre os itens */
+  align-items: center; /* Alinha os itens verticalmente */
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+   background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Fundo em gradiente */
+   gap: 1rem;
+   font-size: 1.5rem; /* Tamanho da fonte */
 }
 
+/* Título do cabeçalho */
 .header-title {
-  color:#ffbb00 ;
-  font-size: 2rem;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(128, 82, 82, 0.5);
-  flex: 1;
-  text-align: center;
+  color:#ffbb00 ; /* Cor do título */
+  font-size: 2rem; /* Tamanho da fonte */
+  margin: 0; /* Remove a margem */
+  text-shadow: 2px 2px 4px rgba(128, 82, 82, 0.5); /* Sombra do texto */
 }
 
+/* Logo do cabeçalho */
 .header__logo img {
-  height: 80px;
+  height: 80px; /* Altura da logo */
   
 }
 
+/* Navegação do cabeçalho */
 .header__nav {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+  display: flex; /* Usa flexbox para alinhar os links */
+  gap: 1rem; /* Espaçamento entre os links */
+  align-items: center; /* Alinha os links verticalmente */
 }
 
+/* Links da navegação */
 .header__nav a {
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s;
+  color:  var(--primary-color); /* Cor dos links */
+  font-weight: bold; /* Deixa o texto em negrito */
+  transition: color 0.3s; /* Adiciona uma transição suave na cor */
 }
 
+/* Efeito hover nos links da navegação */
 .header__nav a:hover {
-  color: var(--primary-color);
+  color:   var(--secondary-color);; /* Muda a cor ao passar o mouse */
 }
 
+/* Botão de menu para dispositivos móveis */
 .header__toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
+  display: none; /* Esconde o botão por padrão */
+  background: none; /* Remove o fundo */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }
 
+/* Ícone do botão de menu */
 .header__toggle span {
-  background-color: var(--secondary-color);
-  display: block;
-  height: 3px;
-  width: 25px;
-  margin: 5px 0;
-  transition: 0.3s;
+  background-color: var(--secondary-color); /* Cor do ícone */
+  display: block; /* Transforma em bloco */
+  height: 3px; /* Altura do ícone */
+  width: 25px; /* Largura do ícone */
+  margin: 5px 0; /* Margem do ícone */
+  transition: 0.3s; /* Adiciona uma transição suave */
 }
 
+/* Seção principal (hero) */
 .hero {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  color: white;
-  padding: 4rem 1rem;
-  display: flex;
-  align-items: center;
-  min-height: 60vh;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Fundo em gradiente */
+  color: white; /* Cor do texto */
+  padding: 4rem 1rem; /* Preenchimento */
+  display: flex; /* Usa flexbox */
+  align-items: center; /* Alinha os itens verticalmente */
 }
 
+/* Conteúdo da seção principal */
 .hero__content {
-  flex: 1;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  text-align: center;
-  
-  text-shadow: 2px 2px 4px rgba(128, 82, 82, 0.5);
-
-
+  flex: 1; /* Ocupa o espaço restante */
+  max-width: 600px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza */
+  padding: 0 1rem; /* Preenchimento */
+  text-align: center; /* Centraliza o texto */
+  text-shadow: 2px 2px 4px rgba(128, 82, 82, 0.5); /* Sombra do texto */
 }
 
+/* Título da seção principal */
 .hero__content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem; /* Tamanho da fonte */
+  margin-bottom: 1rem; /* Margem inferior */
 }
 
+/* Parágrafo da seção principal */
 .hero__content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem; /* Tamanho da fonte */
+  margin-bottom: 2rem; /* Margem inferior */
 }
 
+/* Botão */
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  display: inline-block; /* Transforma em bloco, mas permite que outros elementos fiquem ao lado */
+  padding: 0.75rem 1.5rem; /* Preenchimento */
+  background-color: var(--secondary-color); /* Cor de fundo */
+  color: var(--text-color); /* Cor do texto */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 5px; /* Borda arredondada */
+  font-weight: bold; /* Texto em negrito */
+  transition: background-color 0.3s; /* Transição suave na cor de fundo */
 }
 
+/* Efeito hover no botão */
 .btn:hover {
-  background-color: #e6a800;
+  background-color: #e6a800; /* Muda a cor de fundo ao passar o mouse */
 }
 
+/* Imagem da seção principal */
 .hero__image {
-  flex: 1;
-  text-align: center;
-  
-
+  flex: 1; /* Ocupa o espaço restante */
+  text-align: center; /* Centraliza a imagem */
 }
 
+/* Carrossel de imagens */
 .carousel {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  
+  position: relative; /* Posição relativa para os botões */
+  max-width: 800px; /* Largura máxima */
+  height: auto; /* Altura */
+  max-height: 500px;
+  margin: 0 auto; 
+   /* Largura máxima */
+  overflow: hidden; /* Esconde o que ultrapassa o contêiner */
+  border-radius: 10px; /* Borda arredondada */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Contêiner do carrossel */
 .carousel-container {
-  display: flex;
-  transition: transform 0.5s ease;
+  display: flex; /* Usa flexbox */
+  transition: transform 0.5s ease; /* Transição suave no movimento */
 }
 
+/* Item do carrossel */
 .carousel-item {
-  min-width: 100%;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  border-radius: 10px;
+  min-width: 100%; /* Largura mínima de 100% */
+  height: 400px; /* Altura */
+  display: flex; /* Usa flexbox */
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Alinha horizontalmente */
+  border-radius: 10px; /* Borda arredondada */
+  overflow: hidden;
+  background: #000;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Botões de navegação do carrossel */
 .carousel-prev, .carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 18px;
+  position: absolute; /* Posição absoluta em relação ao carrossel */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta a centralização vertical */
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
+  color: white; /* Cor do ícone */
+  border: none; /* Remove a borda */
+  padding: 10px; /* Preenchimento */
+  cursor: pointer; /* Cursor de clique */
+  border-radius: 50%; /* Borda arredondada (círculo) */
+  font-size: 18px; /* Tamanho da fonte */
 }
 
+/* Posição do botão "anterior" */
 .carousel-prev {
   left: 10px;
 }
 
+/* Posição do botão "próximo" */
 .carousel-next {
   right: 10px;
 }
 
+/* Efeito hover nos botões do carrossel */
 .carousel-prev:hover, .carousel-next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8); /* Escurece o fundo ao passar o mouse */
 }
 
+/* Seções "Sobre", "Produtos" e "Contato" */
 .about, .products, .contact {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
+  max-width: 1200px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza */
+  padding: 4rem 1rem; /* Preenchimento */
 }
+
+/* Texto da seção "Sobre" */
 .about__text{
-  text-align: center;
-  color:white;
-  font-size: 20px;
+  text-align: center; /* Centraliza o texto */
+  color:white; /* Cor do texto */
+  font-size: 20px; /* Tamanho da fonte */
 }
+
+/* Títulos das seções */
 .about h2, .products h2, .contact h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: var(--primary-color);
-  font-size: 2rem;
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 2rem; /* Margem inferior */
+  color: var(--primary-color); /* Cor do texto */
+  font-size: 2rem; /* Tamanho da fonte */
 }
 
+/* Contêiner da seção "Sobre" */
 .about__container {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  background: linear-gradient(135deg,  var(--secondary-color), var(--primary-color));
-  border-radius: 15px;
- 
+  display: flex; /* Usa flexbox */
+  gap: 2rem; /* Espaçamento entre os itens */
+  align-items: center; /* Alinha verticalmente */
+  background: linear-gradient(135deg,  var(--secondary-color), var(--accent-color)); /* Fundo em gradiente */
+  border-radius: 15px; /* Borda arredondada */
+  padding: 2rem;
 }
 
+/* Imagem da seção "Sobre" */
 .about__image img {
-  max-width: 300px;
-  border-radius: 10px;
+  max-width: 300px; /* Largura máxima */
+  border-radius: 10px; /* Borda arredondada */
 }
 
+/* Grade de produtos */
 .products__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  display: grid; /* Usa grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+  gap: 2rem; /* Espaçamento entre os itens */
 }
 
+/* Cartão de produto */
 .product-card {
-  background-color: var(--background-color);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s;
+  background-color: var(--background-color); /* Cor de fundo */
+  padding: 1.5rem; /* Preenchimento */
+  border-radius: 10px; /* Borda arredondada */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  text-align: center; /* Centraliza o texto */
+  transition: transform 0.3s; /* Transição suave na transformação */
 }
 
+/* Efeito hover no cartão de produto */
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Move o cartão para cima ao passar o mouse */
 }
 
+/* Imagem do produto */
 .product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  width: 100%; /* Largura total */
+  height: 200px; /* Altura fixa */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  border-radius: 8px; /* Borda arredondada */
+  margin-bottom: 1rem; /* Margem inferior */
 }
 
+/* Título do produto */
 .product-card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  margin-bottom: 0.5rem; /* Margem inferior */
+  color: var(--primary-color); /* Cor do texto */
 }
 
+/* Preço do produto */
 .price {
-  font-weight: bold;
-  color: var(--secondary-color);
-  font-size: 1.2rem;
+  font-weight: bold; /* Texto em negrito */
+  color: var(--secondary-color); /* Cor do texto */
+  font-size: 1.2rem; /* Tamanho da fonte */
 }
 
+/* Contêiner da seção "Contato" */
 .contact__container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   align-items: flex-start;
 }
 
-.contact__info {
-  flex: 1;
+.contact__form-container {
+    flex: 1 1 400px;
+    max-width: 550px;
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact__info-container {
+    flex: 1 1 400px;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-form h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(239, 138, 160, 0.25);
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1.1rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.contact-form .btn:hover {
+    background-color: var(--dark-accent-color);
+}
+
+/* Informações de contato e mapa */
+.contact__info, .contact__map {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact__info h3, .contact__map h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .contact__info p {
   margin-bottom: 1rem;
+  line-height: 1.8;
 }
 
-.contact__map {
-  flex: 1;
+.contact__info p strong {
+    color: var(--dark-accent-color);
 }
 
+/* Iframe do mapa */
 .contact__map iframe {
-  width: 100%;
-  height: 300px;
-  border: none;
-  border-radius: 10px;
+  width: 100%; /* Largura total */
+  height: 450px; /* Altura */
+  border: none; /* Remove a borda */
+  border-radius: 10px; /* Borda arredondada */
 }
 
+/* Rodapé */
 .footer {
-  background-color: var(--dark-accent-color);
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+  background-color: var(--dark-accent-color); /* Cor de fundo */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 2rem 1rem; /* Preenchimento */
 }
 
+/* Parágrafo no rodapé */
 .footer p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Margem inferior */
 }
 
+/* Media queries para responsividade (telas menores que 768px) */
 @media (max-width: 768px) {
+  /* Navegação do cabeçalho em telas menores */
   .header__nav {
-    display: none;
-    position: absolute;
-    top: 100%;
+    display: none; /* Esconde a navegação */
+    position: absolute; /* Posição absoluta */
+    top: 100%; /* Abaixo do cabeçalho */
     left: 0;
-    width: 100%;
-    background-color: var(--background-color);
-    flex-direction: column;
-    padding: 1rem;
-    border-top: 1px solid #eee;
+    width: 100%; /* Largura total */
+    background-color: var(--background-color); /* Cor de fundo */
+    flex-direction: column; /* Organiza os links em coluna */
+    padding: 1rem; /* Preenchimento */
+    border-top: 1px solid #eee; /* Borda superior */
   }
 
+  /* Mostra a navegação quando a classe 'active' é adicionada */
   .header__nav.active {
     display: flex;
   }
 
+  /* Mostra o botão de menu em telas menores */
   .header__toggle {
     display: block;
   }
 
+  /* Seção principal em telas menores */
   .hero {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column; /* Organiza os itens em coluna */
+    text-align: center; /* Centraliza o texto */
   }
 
+  /* Contêineres "Sobre" e "Contato" em telas menores */
   .about__container, .contact__container {
-    flex-direction: column;
+    flex-direction: column; /* Organiza os itens em coluna */
   }
 
+  /* Grade de produtos em telas menores */
   .products__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Apenas uma coluna */
   }
+}
+
+/* Splide Carousel Styles */
+.splide__slide img {
+  width: 100%;
+  height: 670px;
+  object-fit: cover;
+  border-radius: 10px;
 }
