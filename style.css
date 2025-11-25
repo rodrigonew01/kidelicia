@@ -57,9 +57,9 @@ img {
 .header__container {
   max-width: 12000px; /* Largura máxima do contêiner */
   margin: 0 auto; /* Centraliza o contêiner */
-  padding: 1rem; /* Preenchimento interno */
+  padding: -50rem; /* Preenchimento interno */
   display: flex; /* Usa flexbox para alinhar os itens */
-  justify-content: space-between; /* Distribui o espaço entre os itens */
+  justify-content: space-evenly; /* Distribui o espaço entre os itens */
   align-items: center; /* Alinha os itens verticalmente */
   flex-wrap: wrap; /* Permite que os itens quebrem a linha */
    background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Fundo em gradiente */
@@ -77,15 +77,17 @@ img {
 
 /* Logo do cabeçalho */
 .header__logo img {
-  height: 80px; /* Altura da logo */
+  height: 100px; /* Altura da logo */
   
 }
 
 /* Navegação do cabeçalho */
 .header__nav {
-  display: flex; /* Usa flexbox para alinhar os links */
+  display:inline-flex; /* Usa flexbox para alinhar os links */
   gap: 1rem; /* Espaçamento entre os links */
   align-items: center; /* Alinha os links verticalmente */
+  
+  
 }
 
 /* Links da navegação */
